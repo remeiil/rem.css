@@ -1,0 +1,201 @@
+/* Import Nunito font early so that fonts display correctly as quickly as possible. */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --cordovan: #8f3545;
+    --jasmine: #ffd988;
+    --black-bean: #300D14;
+    --moss-green: #90A955;
+    --resenda-green: #6E7F46;
+    --seashell: #FFF8F1;
+    --isabelline: #eee8e2;
+    --sage: #b2b09b;
+    --jasmine-transparent: #ffd98857;
+    --seal-brown: #432000;
+    --turquoise: #5eead4;
+    --turquoise-transparent: #5eead457;
+    --pale-azure: #94D4F5;
+
+    --max-width: 1200px;
+    --gutter: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+}
+
+/* ====== BUTTONS ======== */
+.button {
+    background-color: var(--isabelline);
+    border: var(--black-bean) 2px solid;
+    border-radius: 0.5rem;
+    color: var(--black-bean);
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    transition-duration: 0.2s;
+}
+.button:hover {
+    box-shadow: 0 0 8px 2px var(--jasmine);
+    translate: 0px -2px;
+}
+.button:active {
+    box-shadow: 0 0 8px 2px var(--jasmine);
+    translate: 0px 3px;
+}
+
+/* ====== ELEMENTS ======= */
+.card {
+    background-color: var(--seashell);
+    border: var(--black-bean) solid 2px;
+    border-radius: 0.5rem;
+    color: var(--black-bean);
+    margin: 1rem;
+    padding: 1rem;
+}
+/* need to add modal class */
+
+/* ====== COLOURS AND EFFECTS ======== */
+.gradient-yellow {
+  background-image: linear-gradient(to top right, var(--seashell), var(--jasmine));
+}
+.red {
+    background-color: var(--cordovan);
+    color: var(--seashell);
+}
+.green {
+    background-color: var(--moss-green);
+    color: #fff;
+}
+.shadow {
+  box-shadow: 0.25rem 0.25rem 0.25rem var(--seal-brown);
+}
+.bg-cordovan { background-color: var(--cordovan) ;}
+.bg-jasmine { background-color: var(--jasmine) ;}
+.bg-black-bean { background-color: var(--black-bean) ;}
+.bg-moss-green { background-color: var(--moss-green) ;}
+.bg-resenda-green { background-color: var(--resenda-green) ;}
+.bg-seashell { background-color: var(--seashell) ;}
+.bg-isabelline { background-color: var(--isabelline) ;}
+.bg-sage { background-color: var(--sage) ;}
+.bg-jasmine-transparent { background-color: var(--jasmine-transparent) ;}
+.bg-seal-brown { background-color: var(--seal-brown) ;}
+.bg-turquoise { background-color: var(--turquoise) ;}
+.bg-turquoise-transparent { background-color: var(--turquoise-transparent) ;}
+.bg-pale-azure { background-color: var(--pale-azure) ;}
+
+.font-cordovan { color: var(--cordovan) ;}
+.font-jasmine { color: var(--jasmine) ;}
+.font-black-bean { color: var(--black-bean) ;}
+.font-moss-green { color: var(--moss-green) ;}
+.font-resenda-green { color: var(--resenda-green) ;}
+.font-seashell { color: var(--seashell) ;}
+.font-isabelline { color: var(--isabelline) ;}
+.font-sage { color: var(--sage) ;}
+.font-jasmine-transparent { color: var(--jasmine-transparent) ;}
+.font-seal-brown { color: var(--seal-brown) ;}
+.font-turquoise { color: var(--turquoise) ;}
+.font-turquoise-transparent { color: var(--turquoise-transparent) ;}
+.font-pale-azure { color: var(--pale-azure) ;}
+
+/* ====== PADDING AND MARGINS ========= */
+.vh100 {
+  min-height: 100vh;
+}
+
+.p1 {
+  padding: 1rem;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ====== GRID ====== */
+.row {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile default */
+  gap: var(--gutter);
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ====== COLUMN SPAN (mobile default = full width) ====== */
+[class*="col-"] {
+  grid-column: span 12;
+}
+
+/* ====== BREAKPOINTS ====== */
+
+/* Small devices (≥ 600px) */
+@media (min-width: 600px) {
+  .row {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .col-sm-1  { grid-column: span 1; }
+  .col-sm-2  { grid-column: span 2; }
+  .col-sm-3  { grid-column: span 3; }
+  .col-sm-4  { grid-column: span 4; }
+  .col-sm-5  { grid-column: span 5; }
+  .col-sm-6  { grid-column: span 6; }
+  .col-sm-7  { grid-column: span 7; }
+  .col-sm-8  { grid-column: span 8; }
+  .col-sm-9  { grid-column: span 9; }
+  .col-sm-10 { grid-column: span 10; }
+  .col-sm-11 { grid-column: span 11; }
+  .col-sm-12 { grid-column: span 12; }
+}
+
+/* Medium devices (≥ 900px) */
+@media (min-width: 900px) {
+  .col-md-1  { grid-column: span 1; }
+  .col-md-2  { grid-column: span 2; }
+  .col-md-3  { grid-column: span 3; }
+  .col-md-4  { grid-column: span 4; }
+  .col-md-5  { grid-column: span 5; }
+  .col-md-6  { grid-column: span 6; }
+  .col-md-7  { grid-column: span 7; }
+  .col-md-8  { grid-column: span 8; }
+  .col-md-9  { grid-column: span 9; }
+  .col-md-10 { grid-column: span 10; }
+  .col-md-11 { grid-column: span 11; }
+  .col-md-12 { grid-column: span 12; }
+}
+
+/* Large devices (≥ 1200px) */
+@media (min-width: 1200px) {
+  .col-lg-1  { grid-column: span 1; }
+  .col-lg-2  { grid-column: span 2; }
+  .col-lg-3  { grid-column: span 3; }
+  .col-lg-4  { grid-column: span 4; }
+  .col-lg-5  { grid-column: span 5; }
+  .col-lg-6  { grid-column: span 6; }
+  .col-lg-7  { grid-column: span 7; }
+  .col-lg-8  { grid-column: span 8; }
+  .col-lg-9  { grid-column: span 9; }
+  .col-lg-10 { grid-column: span 10; }
+  .col-lg-11 { grid-column: span 11; }
+  .col-lg-12 { grid-column: span 12; }
+}
