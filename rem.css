@@ -16,6 +16,12 @@
     --turquoise-transparent: #5eead457;
     --pale-azure: #94D4F5;
 
+    --sky-blue: #8ECAE6;
+    --blue-green: #219ebc;
+    --deep-space-blue: #023047;
+    --amber-flame: #FFB703;
+    --tiger-orange: #FB8500;
+
     --max-width: 1200px;
     --gutter: 1rem;
 }
@@ -62,6 +68,15 @@
 .gradient-yellow {
   background-image: linear-gradient(to top right, var(--seashell), var(--jasmine));
 }
+.gradient-azure {
+  background-image: linear-gradient(to top right, var(--seashell), var(--pale-azure));
+}
+.gradient-blue {
+  background-image: linear-gradient(to top right, var(--deep-space-blue), var(--blue-green), var(--sky-blue));
+}
+.gradient-dark-blue {
+  background-image: linear-gradient(to top right, var(--deep-space-blue), var(--blue-green));
+}
 .red {
     background-color: var(--cordovan);
     color: var(--seashell);
@@ -71,8 +86,12 @@
     color: #fff;
 }
 .shadow {
+  box-shadow: 0.25rem 0.25rem 0.25rem black;
+}
+.shadow-brown {
   box-shadow: 0.25rem 0.25rem 0.25rem var(--seal-brown);
 }
+
 .bg-cordovan { background-color: var(--cordovan) ;}
 .bg-jasmine { background-color: var(--jasmine) ;}
 .bg-black-bean { background-color: var(--black-bean) ;}
@@ -86,6 +105,11 @@
 .bg-turquoise { background-color: var(--turquoise) ;}
 .bg-turquoise-transparent { background-color: var(--turquoise-transparent) ;}
 .bg-pale-azure { background-color: var(--pale-azure) ;}
+.bg-sky-blue{ background-color: var(--sky-blue); }
+.bg-blue-green{ background-color: var(--blue-green); }
+.bg-deep-space-blue { background-color: var(--deep-space-blue); }
+.bg-amber-flame{ background-color: var(--amber-flame); }
+.bg-tiger-orange{ background-color: var(--tiger-orange); }
 
 .font-cordovan { color: var(--cordovan) ;}
 .font-jasmine { color: var(--jasmine) ;}
@@ -100,6 +124,11 @@
 .font-turquoise { color: var(--turquoise) ;}
 .font-turquoise-transparent { color: var(--turquoise-transparent) ;}
 .font-pale-azure { color: var(--pale-azure) ;}
+.font-sky-blue{ color: var(--sky-blue); }
+.font-blue-green{ color: var(--blue-green); }
+.font-deep-space-blue{ color: var(--deep-space-blue); }
+.font-amber-flame{ color: var(--amber-flame); }
+.font-tiger-orange{ color: var(--tiger-orange); }
 
 /* ====== PADDING AND MARGINS ========= */
 .vh100 {
