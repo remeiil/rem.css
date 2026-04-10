@@ -1,3 +1,5 @@
+/* ====== Welcome to Remeil's CSS Project ======== */
+
 /* Import Nunito font early so that fonts display correctly as quickly as possible. */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
@@ -19,10 +21,31 @@
   --sky-blue: #8ECAE6;
   --blue-green: #219ebc;
   --deep-space-blue: #023047;
-  --amber-flame: #FFB703;
+  --amber-flame: #ffb803;
   --tiger-orange: #FB8500;
 
   --fern: #4f772d;
+  --black-forest: #283618;
+
+  --medium-jungle: #2ca02c;
+  --jade-green: #40b440;
+  --vivid-tangerine: #ff7f0e;
+  --dark-orange: #fd953a;
+  --flag-red: #d62728;
+  --strawberry-red: #e24848;
+  --bright-teal-blue: #1f77b4;
+  --steel-blue: #317fb6;
+  --grey: #7f7f7f;
+  --silver: #aaaaaa;
+  --graphite: #2e2e2e;
+  --charcoal: #4e4e4e;
+  --charcoal-transparent: #4e4e4e57;
+
+  --ultra-violet: #7A00FD;
+  --indigo: #5A05A9;
+  --deep-lilac: #8258AA;
+  --amethyst-smoke: #9681AA;
+  --indigo-ink: #39056A;
 
   --gutter: 1rem;
 }
@@ -35,25 +58,6 @@
   font-optical-sizing: auto;
 }
 
-/* ====== BUTTONS ======== */
-.button {
-  background-color: var(--isabelline);
-  border: var(--black-bean) 2px solid;
-  border-radius: 0.5rem;
-  color: var(--black-bean);
-  font-size: 1.25rem;
-  padding: 0.5rem;
-  transition-duration: 0.2s;
-}
-.button:hover {
-  box-shadow: 0 0 8px 2px var(--jasmine);
-  translate: 0px -2px;
-}
-.button:active {
-  box-shadow: 0 0 8px 2px var(--jasmine);
-  translate: 0px 3px;
-}
-
 /* ====== ELEMENTS ======= */
 .card {
   background-color: var(--seashell);
@@ -63,6 +67,22 @@
   margin: 0.5rem;
   padding: 1rem;
 }
+
+.dropdown {
+  position: relative;
+}
+.dropdown-content, .dropdown-content-right {
+  display: none;
+  position: absolute;
+  min-width: 250px;
+}
+.dropdown-content-right {
+  right: 0;
+}
+.dropdown:hover .dropdown-content, .dropdown:hover .dropdown-content-right {
+  display: block;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -78,10 +98,9 @@
 .modal {
   max-height: 90vh;
   overflow-y: auto;
-  min-width: 90vw;
-  width: 90vw;
-  max-width: 90vw;
+  max-height: 90vh;
 }
+/* Not sold on this being in here, I might choose to do things another way for tables */
 .table .row{
   border-bottom: var(--sage) 1px solid;
 }
@@ -120,15 +139,14 @@
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-input[type="checkbox"]:hover {
-  border-color: #4CAF50;
+.checkbox input[type="checkbox"]:hover {
+  border-color: var(--medium-jungle);
 }
-input[type="checkbox"]:focus {
-  outline: 2px solid #4CAF50;
+.checkbox input[type="checkbox"]:focus {
+  outline: 2px solid var(--medium-jungle);
   outline-offset: 2px;
 }
-
-input[type="number"] {
+.checkbox input[type="number"] {
   border-radius: 0.25rem;
   margin: 0.25rem;
 }
@@ -146,6 +164,76 @@ input[type="number"] {
   border: #fff 2px solid;
 }
 
+.footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+/* ====== BUTTONS AND SLIDERS ======== */
+.btn {
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+.btn:active {
+  transition-duration: 200ms;
+  transform: translateY(2px);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.1rem;
+  height: 1.5rem;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.25rem;
+  width: 1.25rem;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 1.5rem;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
 /* ====== COLOURS AND EFFECTS ======== */
 .gradient-yellow {
   background-image: linear-gradient(to top right, var(--seashell), var(--jasmine));
@@ -159,14 +247,47 @@ input[type="number"] {
 .gradient-dark-blue {
   background-image: linear-gradient(to top right, var(--deep-space-blue), var(--blue-green));
 }
+.gradient-red {
+  background-image: linear-gradient(125deg, var(--amber-flame), var(--flag-red), var(--cordovan), var(--cordovan), var(--charcoal));
+}
+.gradient-purple {
+  background-image: linear-gradient(125deg, var(--amber-flame), var(--deep-lilac), var(--indigo), var(--indigo), var(--indigo-ink), black);
+}
+.gradient-green {
+  background-image: linear-gradient(125deg, var(--fern), var(--medium-jungle), var(--fern), var(--graphite));
+}
+
 .red {
-    background-color: var(--cordovan);
-    color: var(--seashell);
+  background-color: var(--flag-red);
+}
+.red:hover {
+  background-color: var(--strawberry-red);
+}
+.orange {
+  background-color: var(--vivid-tangerine);
+}
+.orange:hover {
+  background-color: var(--dark-orange);
+}
+.yellow {
+  background-color: var(--amber-flame);
+}
+.yellow:hover {
+  background-color: var(--jasmine);
 }
 .green {
-    background-color: var(--moss-green);
-    color: #fff;
+  background-color: var(--medium-jungle);
 }
+.green:hover {
+  background-color: var(--jade-green);
+}
+.blue {
+  background-color: var(--bright-teal-blue);
+}
+.blue:hover {
+  background-color: var(--sky-blue);
+}
+
 .shadow {
   box-shadow: 0.25rem 0.25rem 0.25rem black;
 }
@@ -174,19 +295,24 @@ input[type="number"] {
   box-shadow: 0.25rem 0.25rem 0.25rem var(--seal-brown);
 }
 .shadow-subtle {
-  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.7);
+  box-shadow: 0.1rem 0.1rem 0.5rem var(--grey);
 }
+
 .bold {
   font-weight: bold;
 }
 .italic {
   font-style: italic;
 }
+.list-style-none {
+  list-style: none;
+}
 .large-inputs input {
   border: 1px solid #000;
   border-radius: 0.25rem;
   font-size: 1.5rem;
   padding: 0.5rem;
+  width: 100%;
 }
 .large-inputs button {
   border: 1px solid #000;
@@ -196,7 +322,7 @@ input[type="number"] {
   width: 100%;
 }
 .large-inputs button:hover {
-  background-color: var(--blue-green);
+  background-color: var(--amber-flame);
 }
 .large-inputs button:active {
   background-color: var(--sky-blue);
@@ -204,8 +330,8 @@ input[type="number"] {
   translate: 0px 2px;
 }
 
-
 .bg-white {background-color: #fff;}
+.bg-black {background-color: #000;}
 .bg-cordovan { background-color: var(--cordovan) ;}
 .bg-jasmine { background-color: var(--jasmine) ;}
 .bg-black-bean { background-color: var(--black-bean) ;}
@@ -225,8 +351,28 @@ input[type="number"] {
 .bg-amber-flame{ background-color: var(--amber-flame); }
 .bg-tiger-orange{ background-color: var(--tiger-orange); }
 .bg-fern { background-color: var(--fern); }
+.bg-black-forest { background-color: var(--black-forest); }
+.bg-medium-jungle { background-color: var(--medium-jungle); }
+.bg-jade-green { background-color: var(--jade-green); }
+.bg-vivid-tangerine { background-color: var(--vivid-tangerine); }
+.bg-dark-orange { background-color: var(--dark-orange); }
+.bg-flag-red { background-color: var(--flag-red); }
+.bg-strawberry-red { background-color: var(--strawberry-red); }
+.bg-bright-teal-blue { background-color: var(--bright-teal-blue); }
+.bg-steel-blue { background-color: var(--steel-blue); }
+.bg-grey { background-color: var(--grey); }
+.bg-silver { background-color: var(--silver); }
+.bg-graphite { background-color: var(--graphite); }
+.bg-charcoal { background-color: var(--charcoal); }
+.bg-charcoal-transparent { background-color: var(--charcoal-transparent); }
+.bg-ultra-violet { background-color: var(--ultra-violet); }
+.bg-indigo { background-color: var(--indigo); }
+.bg-deep-lilac { background-color: var(--deep-lilac); }
+.bg-amethyst-smoke { background-color: var(--amethyst-smoke); }
+.bg-indigo-ink { background-color: var(--indigo-ink); }
 
-.font-white {background-color: #fff;}
+.font-white {color: #fff;}
+.font-black {color: #000;}
 .font-cordovan { color: var(--cordovan) ;}
 .font-jasmine { color: var(--jasmine) ;}
 .font-black-bean { color: var(--black-bean) ;}
@@ -246,21 +392,122 @@ input[type="number"] {
 .font-amber-flame{ color: var(--amber-flame); }
 .font-tiger-orange{ color: var(--tiger-orange); }
 .font-fern { color: var(--fern); }
+.font-black-forest { color: var(--black-forest); }
+.font-medium-jungle { color: var(--medium-jungle); }
+.font-jade-green { color: var(--jade-green); }
+.font-vivid-tangerine { color: var(--vivid-tangerine); }
+.font-dark-orange { color: var(--dark-orange); }
+.font-flag-red { color: var(--flag-red); }
+.font-strawberry-red { color: var(--strawberry-red); }
+.font-bright-teal-blue { color: var(--bright-teal-blue); }
+.font-steel-blue { color: var(--steel-blue); }
+.font-grey { color: var(--grey); }
+.font-silver { color: var(--silver); }
+.font-graphite { color: var(--graphite); }
+.font-charcoal { color: var(--charcoal); }
+.font-ultra-violet { color: var(--ultra-violet); }
+.font-indigo { color: var(--indigo); }
+.font-deep-lilac { color: var(--deep-lilac); }
+.font-amethyst-smoke { color: var(--amethyst-smoke); }
+.font-indigo-ink { color: var(--indigo-ink); }
 
-/* ====== PADDING AND MARGINS ========= */
-.vh100 {
-  min-height: 100vh;
+/* ====== BORDERS ========= */
+.br025 {border-radius: 0.25rem;}
+.br05 {border-radius: 0.5rem;}
+.br1 {border-radius: 1rem;}
+.br2 {border-radius: 2rem;}
+
+.border-none { border: none;}
+
+.border{border: 1px solid #000;}
+.border-white{border: 1px solid #fff;}
+.border-sage{border: 1px solid var(--sage);}
+.border-silver{border: 1px solid var(--silver);}
+.border-green{border: 1px solid var(--medium-jungle);}
+.border-red{border: 1px solid var(--flag-red);}
+
+/* ====== HEIGHTS, WIDTHS, PADDING AND MARGINS ========= */
+.vh50 {min-height: 50vh;}
+.vh60 {min-height: 60vh;}
+.vh70 {min-height: 70vh;}
+.vh80 {min-height: 80vh;}
+.vh90 {min-height: 90vh;}
+.vh100 {min-height: 100vh;}
+
+.height50 {height: 50%;}
+.height60 {height: 60%;}
+.height70 {height: 70%;}
+.height80 {height: 80%;}
+.height90 {height: 90%;}
+.height100 {height: 100%;}
+
+.square {
+  aspect-ratio: 1 / 1;
 }
 
-.p1 {
-  padding: 1rem;
-}
+.vw10 {min-width: 10vw;}
+.vw20 {min-width: 20vw;}
+.vw30 {min-width: 30vw;}
+.vw40 {min-width: 40vw;}
+.vw50 {min-width: 50vw;}
+.vw60 {min-width: 60vw;}
+.vw70 {min-width: 70vw;}
+.vw80 {min-width: 80vw;}
+.vw90 {min-width: 90vw;}
+.vw100 {min-width: 100vw;}
+
+.width10 {width: 10%;}
+.width20 {width: 20%;}
+.width30 {width: 30%;}
+.width40 {width: 40%;}
+.width50 {width: 50%;}
+.width60 {width: 60%;}
+.width70 {width: 70%;}
+.width80 {width: 80%;}
+.width90 {width: 90%;}
+.width100 {width: 100%;}
+
+.m025 {margin: 0.25rem;}
+.m05 {margin: 0.5rem;}
+.m1 {margin: 1rem;}
+.m2 {margin: 2rem;}
+.m-auto {margin: auto;}
+
+.mb025 {margin-bottom: 0.25rem;}
+.mb05 {margin-bottom: 0.5rem;}
+.mb1 {margin-bottom: 1rem;}
+.mb2 {margin-bottom: 2rem;}
+
+.mh025 {margin: 0 0.25rem;}
+.mh05 {margin: 0 0.5rem;}
+.mh1 {margin: 0 1rem;}
+.mh2 {margin: 0 2rem;}
+
+.mv025 {margin: 0.25rem 0;}
+.mv05 {margin: 0.5rem 0;}
+.mv1 {margin: 1rem 0;}
+.mv2 {margin: 2rem 0;}
+
+.p01 {padding: 0.1rem;}
+.p025 {padding: 0.25rem;}
+.p05 {padding: 0.5rem;}
+.p1 {padding: 1rem;}
+.p2 {padding: 2rem;}
+
+.pull-right {text-align: end;}
+.pull-left {text-align: start;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+.center-v {align-self: center;}
+.z5 {z-index: 5;}
+.z10 {z-index: 10;}
+.z100 {z-index: 100;}
 
 /* ====== CONTAINER ====== */
 .container {
   width: 100%;
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  /* padding-inline: var(--gutter); */
 }
 
 /* ====== GRID ====== */
@@ -273,7 +520,7 @@ input[type="number"] {
 .auto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: var(--gutter);
 }
 
 .center {
@@ -284,6 +531,14 @@ input[type="number"] {
 .justify-between {
   display: flex;
   justify-content: space-between;
+}
+
+/* HIDING */
+.hide {
+  display: none;
+}
+.hide-when-xs {
+  display: none;
 }
 
 /* ====== COLUMN SPAN (mobile default = full width) ====== */
@@ -311,6 +566,8 @@ input[type="number"] {
   .col-sm-10 { grid-column: span 10; }
   .col-sm-11 { grid-column: span 11; }
   .col-sm-12 { grid-column: span 12; }
+
+  .hide-when-xs {display: inline-block;}
 }
 
 /* Medium devices (≥ 600px) */
@@ -359,36 +616,12 @@ input[type="number"] {
   .col-xl-10 { grid-column: span 10; }
   .col-xl-11 { grid-column: span 11; }
   .col-xl-12 { grid-column: span 12; }
-  .modal {min-width: 50vw; width: 50vw; max-width: 50vw;}
-}
-
-.hide {
-  display: none;
 }
 
 
-/* Energy Placeholders - needs to be moved out of rem.css as linked to individual project */
-.colourless {
-  background-color: rgb(194, 193, 193);
-  border-radius: 50%;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-}
-.fire {
-  background-color: red;
-  border-radius: 50%;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-}
-.water {
-  background-color: #00abfa;
-  border-radius: 50%;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-}
+
+
+
 
 
 
