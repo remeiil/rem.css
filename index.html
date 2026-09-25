@@ -1,225 +1,373 @@
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-      <!-- R Favicon-->
-      <link rel="apple-touch-icon" sizes="180x180" href="https://remeil.co.nz//apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="https://remeil.co.nz//favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="https://remeil.co.nz//favicon-16x16.png">
-      
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Nunito Fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-      <!-- Rem's Stylesheets-->
-      <link rel="stylesheet" href="./rem.css">
+    <!-- R Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://remeil.co.nz//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://remeil.co.nz//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://remeil.co.nz//favicon-16x16.png">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Nunito Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <!-- Rem's Stylesheets-->
+    <link rel="stylesheet" href="./rem.css">
     <title>Remeil's Cascading StyleSheet</title>
   </head>
   <body class="bg-seashell vh100">
+    <!-- Header -->
     <div class="row p1 gradient-red font-seashell shadow-subtle">
-        <div class="hide-when-xs col-sm-3"></div>
-        <h1 class=" col-lg-6 center">Remeil's Cascading StyleSheet</h1>
-        <div class="col-lg-3 pull-right">
-            <!-- need to build out a proper input, this is just a placeholder -->
-            <input class="input" placeholder="Search..." >
-        </div>
+      <div class="hide-when-xs col-sm-3"></div>
+      <h1 class="col-lg-6 center">Remeil's Cascading StyleSheet</h1>
+      <div class="col-lg-3 pull-right">
+        <input class="input" placeholder="Search..." />
+      </div>
     </div>
+
+    <!-- Intro Card -->
     <div class="container center m1">
-            <div class="p2 br05 bg-white font-charcoal shadow-subtle">
-                <p>Welcome to where I host my CSS, nothing to see here. Head on over to <a href="https://remeil.co.nz">Remeil.co.nz</a> if you're looking for my website or check my <a href="https://portfolio.remeil.co.nz">Portfolio here.</a>
-            </div>
+      <div class="p2 br05 bg-white font-charcoal shadow-subtle">
+        <p>Welcome to where I host my CSS, nothing to see here. Head on over to <a href="https://remeil.co.nz">Remeil.co.nz</a> if you're looking for my website or check my <a href="https://portfolio.remeil.co.nz">Portfolio here.</a></p>
+      </div>
     </div>
+
     <hr class="m2" />
+
+    <!-- Main Content Grid -->
     <div class="container">
       <div class="row">
+
+        <!-- Sidebar Navigation -->
         <div class="col-md-2 p1 hide-when-xs">
           <h4>Navigation</h4>
-          <p>Introduction</p>
-          <p>Boilerplate</p>
-          <p>Breakpoints</p>
-          <p>Colours</p>
-          <p>Elements</p>
-
+          <p><a href="#introduction" class="font-charcoal">Introduction</a></p>
+          <p><a href="#boilerplate" class="font-charcoal">Boilerplate</a></p>
+          <p><a href="#breakpoints" class="font-charcoal">Breakpoints</a></p>
+          <p><a href="#colours" class="font-charcoal">Colours</a></p>
+          <p><a href="#elements" class="font-charcoal">Elements</a></p>
         </div>
-        <div class="col-md-12 col-lg-10 col-xl-8 bg-white br05 p2">
-          <h1>Introduction</h1>
-          <p>This guide is for my own learning purposes and not intended for public consumption.</p><br/>
-          <p>With this documentation I aim to provide myself with a quick guide I can refer to when implementing my .css files on sites external to my normal development environment. I will attempt to write tidy and consumable documentation and while I'm at it I may to look to create and constantly improve a CRUD app to link into the rest off my ecosystem.</p>
+
+        <!-- Documentation Body -->
+        <div class="col-md-12 col-lg-10 col-xl-8 bg-white br05 p2 shadow-subtle mb2">
+          
+          <!-- Introduction -->
+          <section id="introduction">
+            <h1>Introduction</h1>
+            <p>This guide is for my own learning purposes and not intended for public consumption.</p><br/>
+            <p>With this documentation I aim to provide myself with a quick guide I can refer to when implementing my .css files on sites external to my normal development environment. I will attempt to write tidy and consumable documentation and while I'm at it I may look to create and constantly improve a CRUD app to link into the rest of my ecosystem.</p>
+          </section>
+
           <br/>
-          <h1>Getting Started</h1>
-          <p>I will host my CSS on the css sub-domain here: <a href="https://css.remeil.co.nz/rem.css">https://css.remeil.co.nz/rem.css</a> but sometimes I just need some consistent boilerplate, so here it is:</p>
-          <div class="p1 br05 bg-graphite font-mk-white">
-            <button class="btn border-silver bg-graphite font-silver" id="copyBtn" onclick="copyCode()">Copy Code</button>
-            <pre><code id="codeSnippet">
-&#60;&#33;<span class="font-mk-pink">doctype</span> <span class="font-mk-green">html</span>&#62;
-&#60;<span class="font-mk-pink">html</span> <span class="font-mk-green">lang</span>&#61;<span class="font-mk-yellow">&#34;en&#34;</span></span>&#62;
+
+          <!-- Boilerplate -->
+          <section id="boilerplate">
+            <h1>Getting Started</h1>
+            <p>I host my CSS on the sub-domain here: <a href="https://css.remeil.co.nz/rem.css">https://css.remeil.co.nz/rem.css</a>. Here is the starting boilerplate:</p>
+            <div class="p1 br05 bg-graphite font-mk-white mt1 mb1">
+              <button class="btn border-silver bg-graphite font-silver" id="copyBtn" onclick="copyCode()">Copy Code</button>
+              <pre><code id="codeSnippet">&#60;&#33;<span class="font-mk-pink">doctype</span> <span class="font-mk-green">html</span>&#62;
+&#60;<span class="font-mk-pink">html</span> <span class="font-mk-green">lang</span>&#61;<span class="font-mk-yellow">&#34;en&#34;</span>&#62;
   &#60;<span class="font-mk-pink">head</span>&#62;
     &#60;<span class="font-mk-pink">meta</span> <span class="font-mk-green">charset</span>&#61;<span class="font-mk-yellow">&#34;UTF&#45;8&#34;</span> &#47;&#62;
-      <span class="font-grey">&#60;&#33;&#45;&#45; R Favicon&#45;&#45;&#62;</span>
-      &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;apple&#45;touch&#45;icon&#34;</span> <span class="font-mk-green">sizes</span>&#61;<span class="font-mk-yellow">&#34;180x180&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;remeil.co.nz&#47;apple&#45;touch&#45;icon.png&#34;</span>&#62;
-      &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;icon&#34;</span> <span class="font-mk-green">type</span>&#61;<span class="font-mk-yellow">&#34;image&#47;png&#34;</span> <span class="font-mk-green">sizes</span>&#61;<span class="font-mk-yellow">&#34;32x32&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;remeil.co.nz&#47;favicon&#45;32x32.png&#34;</span>&#62;
-      &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;icon&#34;</span> <span class="font-mk-green">type</span>&#61;<span class="font-mk-yellow">&#34;image&#47;png&#34;</span> <span class="font-mk-green">sizes</span>&#61;<span class="font-mk-yellow">&#34;16x16&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;remeil.co.nz&#47;favicon&#45;16x16.png&#34;</span>&#62;
-      
-      &#60;<span class="font-mk-pink">meta</span> <span class="font-mk-green">name</span>&#61;<span class="font-mk-yellow">&#34;viewport&#34;</span> <span class="font-mk-green">content</span>&#61;<span class="font-mk-yellow">&#34;width&#61;device&#45;width, initial&#45;scale&#61;1.0&#34;</span> &#47;&#62;
-      <span class="font-grey">&#60;&#33;&#45;&#45; Nunito Fonts &#45;&#45;&#62;</span>
-      &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;preconnect&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;fonts.googleapis.com&#34;</span>&#62;
-      &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;preconnect&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;fonts.gstatic.com&#34;</span> <span class="font-mk-green">crossorigin</span>&#62;
-      &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;fonts.googleapis.com&#47;css2&#63;family&#61;Nunito+Sans&#58;ital,opsz,wght&#64;0,6..12,200..1000;1,6..12,200..1000&display&#61;swap&#34;</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;stylesheet&#34;</span>&#62;
-
-      <span class="font-grey">&#60;&#33;&#45;&#45; Rem&#39;s Stylesheets&#45;&#45;&#62;</span>
-      &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;stylesheet&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;css.remeil.co.nz&#47;rem.css&#34;</span>&#62;
+    &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;apple&#45;touch&#45;icon&#34;</span> <span class="font-mk-green">sizes</span>&#61;<span class="font-mk-yellow">&#34;180x180&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;remeil.co.nz&#47;apple&#45;touch&#45;icon.png&#34;</span>&#62;
+    &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;icon&#34;</span> <span class="font-mk-green">type</span>&#61;<span class="font-mk-yellow">&#34;image&#47;png&#34;</span> <span class="font-mk-green">sizes</span>&#61;<span class="font-mk-yellow">&#34;32x32&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;remeil.co.nz&#47;favicon&#45;32x32.png&#34;</span>&#62;
+    &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;icon&#34;</span> <span class="font-mk-green">type</span>&#61;<span class="font-mk-yellow">&#34;image&#47;png&#34;</span> <span class="font-mk-green">sizes</span>&#61;<span class="font-mk-yellow">&#34;16x16&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;remeil.co.nz&#47;favicon&#45;16x16.png&#34;</span>&#62;
+    &#60;<span class="font-mk-pink">meta</span> <span class="font-mk-green">name</span>&#61;<span class="font-mk-yellow">&#34;viewport&#34;</span> <span class="font-mk-green">content</span>&#61;<span class="font-mk-yellow">&#34;width&#61;device&#45;width, initial&#45;scale&#61;1.0&#34;</span> &#47;&#62;
+    &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;preconnect&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;fonts.googleapis.com&#34;</span>&#62;
+    &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;preconnect&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;fonts.gstatic.com&#34;</span> <span class="font-mk-green">crossorigin</span>&#62;
+    &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;fonts.googleapis.com&#47;css2&#63;family&#61;Nunito+Sans&#58;ital,opsz,wght&#64;0,6..12,200..1000;1,6..12,200..1000&display&#61;swap&#34;</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;stylesheet&#34;</span>&#62;
+    &#60;<span class="font-mk-pink">link</span> <span class="font-mk-green">rel</span>&#61;<span class="font-mk-yellow">&#34;stylesheet&#34;</span> <span class="font-mk-green">href</span>&#61;<span class="font-mk-yellow">&#34;https&#58;&#47;&#47;css.remeil.co.nz&#47;rem.css&#34;</span>&#62;
     &#60;<span class="font-mk-pink">title</span>&#62;Remeil&#39;s New Page Template&#60;&#47;<span class="font-mk-pink">title</span>&#62;
   &#60;&#47;<span class="font-mk-pink">head</span>&#62;
   &#60;<span class="font-mk-pink">body</span>&#62;
     &#60;<span class="font-mk-pink">div</span> <span class="font-mk-green">class</span>&#61;<span class="font-mk-yellow">&#34;container&#34;</span>&#62;
       &#60;<span class="font-mk-pink">div</span> <span class="font-mk-green">class</span>&#61;<span class="font-mk-yellow">&#34;row&#34;</span>&#62;
-        &#60;<span class="font-mk-pink">div</span> <span class="font-mk-green">class</span>&#61;<span class="font-mk-yellow">&#34;col&#45;sm&#45;12&#34;</span>&#62;
-        &#60;&#47;<span class="font-mk-pink">div</span>&#62;
+        &#60;<span class="font-mk-pink">div</span> <span class="font-mk-green">class</span>&#61;<span class="font-mk-yellow">&#34;col&#45;sm&#45;12&#34;</span>&#62;&#60;&#47;<span class="font-mk-pink">div</span>&#62;
       &#60;&#47;<span class="font-mk-pink">div</span>&#62;
     &#60;&#47;<span class="font-mk-pink">div</span>&#62;
-&#60;&#47;<span class="font-mk-pink">body</span>&#62;
+  &#60;&#47;<span class="font-mk-pink">body</span>&#62;
 &#60;&#47;<span class="font-mk-pink">html</span>&#62;</code></pre>
-          </div>
+            </div>
+          </section>
+
           <br/>
-          <h1>Breakpoints</h1>
-          <p>I'm trying to keep things simple and work with 5 distinct breakpoints to cover most devices/window sizes responsively. Start with the smallest layout and work upwards, a mobile first design focus. Anything less than 396px or undefined will have 1 column at 100% width.</p>
-          <table class="table table-padded width100 text-left">
-            <thead class="border-bottom">
-              <th>Name</th>
-              <th>Class prefix</th>
-              <th>Breakpoint</th>
+
+          <!-- Breakpoints -->
+          <section id="breakpoints">
+            <h1>Breakpoints</h1>
+            <p>Designed with a mobile-first focus across 5 distinct breakpoints. Anything smaller than 396px spans 1 column at 100% width.</p>
+            <table class="table table-padded width100 text-left mt1 mb1">
+              <thead class="border-bottom">
+                <tr>
+                  <th>Name</th>
+                  <th>Class prefix</th>
+                  <th>Breakpoint</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Extra Small</td>
+                  <td>none</td>
+                  <td>&#60;396px</td>
+                </tr>
+                <tr>
+                  <td>Small</td>
+                  <td>col-sm-</td>
+                  <td>&ge;396px</td>
+                </tr>
+                <tr>
+                  <td>Medium</td>
+                  <td>col-md-</td>
+                  <td>&ge;600px</td>
+                </tr>
+                <tr>
+                  <td>Large</td>
+                  <td>col-lg-</td>
+                  <td>&ge;900px</td>
+                </tr>
+                <tr>
+                  <td>Extra Large</td>
+                  <td>col-xl-</td>
+                  <td>&ge;1200px</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <br/>
+
+          <!-- Colours -->
+          <section id="colours">
+            <h1>Colours</h1>
+            <p>Every colour variable supports Font (<code>.font-*</code>), Background (<code>.bg-*</code>), and Border (<code>.border-*</code>) utility classes.</p>
+            <div class="row mt1">
+              <div class="col-sm-4">
+                <div class="flex m025"><div class="bg-white border p1 square height1rem"></div><p>white</p></div>
+                <div class="flex m025"><div class="bg-black border p1 square height1rem"></div><p>black</p></div>
+                <div class="flex m025"><div class="bg-cordovan border p1 square height1rem"></div><p>cordovan</p></div>
+                <div class="flex m025"><div class="bg-jasmine border p1 square height1rem"></div><p>jasmine</p></div>
+                <div class="flex m025"><div class="bg-black-bean border p1 square height1rem"></div><p>black-bean</p></div>
+                <div class="flex m025"><div class="bg-moss-green border p1 square height1rem"></div><p>moss-green</p></div>
+                <div class="flex m025"><div class="bg-resenda-green border p1 square height1rem"></div><p>resenda-green</p></div>
+                <div class="flex m025"><div class="bg-seashell border p1 square height1rem"></div><p>seashell</p></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="flex m025"><div class="bg-isabelline border p1 square height1rem"></div><p>isabelline</p></div>
+                <div class="flex m025"><div class="bg-sage border p1 square height1rem"></div><p>sage</p></div>
+                <div class="flex m025"><div class="bg-jasmine-transparent border p1 square height1rem"></div><p>jasmine-transparent</p></div>
+                <div class="flex m025"><div class="bg-seal-brown border p1 square height1rem"></div><p>seal-brown</p></div>
+                <div class="flex m025"><div class="bg-turquoise border p1 square height1rem"></div><p>turquoise</p></div>
+                <div class="flex m025"><div class="bg-turquoise-transparent border p1 square height1rem"></div><p>turquoise-transparent</p></div>
+                <div class="flex m025"><div class="bg-pale-azure border p1 square height1rem"></div><p>pale-azure</p></div>
+                <div class="flex m025"><div class="bg-sky-blue border p1 square height1rem"></div><p>sky-blue</p></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="flex m025"><div class="bg-blue-green border p1 square height1rem"></div><p>blue-green</p></div>
+                <div class="flex m025"><div class="bg-deep-space-blue border p1 square height1rem"></div><p>deep-space-blue</p></div>
+                <div class="flex m025"><div class="bg-amber-flame border p1 square height1rem"></div><p>amber-flame</p></div>
+                <div class="flex m025"><div class="bg-tiger-orange border p1 square height1rem"></div><p>tiger-orange</p></div>
+                <div class="flex m025"><div class="bg-fern border p1 square height1rem"></div><p>fern</p></div>
+                <div class="flex m025"><div class="bg-black-forest border p1 square height1rem"></div><p>black-forest</p></div>
+                <div class="flex m025"><div class="bg-medium-jungle border p1 square height1rem"></div><p>medium-jungle</p></div>
+                <div class="flex m025"><div class="bg-jade-green border p1 square height1rem"></div><p>jade-green</p></div>
+              </div>
+            </div>
+            <div class="row mt05">
+              <div class="col-sm-4">
+                <div class="flex m025"><div class="bg-vivid-tangerine border p1 square height1rem"></div><p>vivid-tangerine</p></div>
+                <div class="flex m025"><div class="bg-dark-orange border p1 square height1rem"></div><p>dark-orange</p></div>
+                <div class="flex m025"><div class="bg-flag-red border p1 square height1rem"></div><p>flag-red</p></div>
+                <div class="flex m025"><div class="bg-strawberry-red border p1 square height1rem"></div><p>strawberry-red</p></div>
+                <div class="flex m025"><div class="bg-bright-teal-blue border p1 square height1rem"></div><p>bright-teal-blue</p></div>
+                <div class="flex m025"><div class="bg-steel-blue border p1 square height1rem"></div><p>steel-blue</p></div>
+                <div class="flex m025"><div class="bg-grey border p1 square height1rem"></div><p>grey</p></div>
+                <div class="flex m025"><div class="bg-silver border p1 square height1rem"></div><p>silver</p></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="flex m025"><div class="bg-graphite border p1 square height1rem"></div><p>graphite</p></div>
+                <div class="flex m025"><div class="bg-charcoal border p1 square height1rem"></div><p>charcoal</p></div>
+                <div class="flex m025"><div class="bg-charcoal-transparent border p1 square height1rem"></div><p>charcoal-transparent</p></div>
+                <div class="flex m025"><div class="bg-ultra-violet border p1 square height1rem"></div><p>ultra-violet</p></div>
+                <div class="flex m025"><div class="bg-indigo border p1 square height1rem"></div><p>indigo</p></div>
+                <div class="flex m025"><div class="bg-deep-lilac border p1 square height1rem"></div><p>deep-lilac</p></div>
+                <div class="flex m025"><div class="bg-amethyst-smoke border p1 square height1rem"></div><p>amethyst-smoke</p></div>
+                <div class="flex m025"><div class="bg-indigo-ink border p1 square height1rem"></div><p>indigo-ink</p></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="flex m025"><div class="bg-mk-white border p1 square height1rem"></div><p>mk-white</p></div>
+                <div class="flex m025"><div class="bg-mk-green border p1 square height1rem"></div><p>mk-green</p></div>
+                <div class="flex m025"><div class="bg-mk-pink border p1 square height1rem"></div><p>mk-pink</p></div>
+                <div class="flex m025"><div class="bg-mk-yellow border p1 square height1rem"></div><p>mk-yellow</p></div>
+                <div class="flex m025"><div class="bg-mk-blue border p1 square height1rem"></div><p>mk-blue</p></div>
+                <div class="flex m025"><div class="bg-mk-purple border p1 square height1rem"></div><p>mk-purple</p></div>
+                <div class="flex m025"><div class="bg-mk-grey border p1 square height1rem"></div><p>mk-grey</p></div>
+              </div>
+            </div>
+          </section>
+
+          <br />
+
+          <!-- Elements Showcase Section -->
+          <section id="elements">
+            <h1>Elements</h1>
+            
+            <h3 class="mt1">.card</h3>
+            <div class="card">A simple <code>.card</code> class. Mostly used when prototyping until I figure out the color scheme.</div>
+
+            <h3 class="mt1">Buttons (<code>.btn</code>) & Switches (<code>.switch</code>)</h3>
+            <div class="flex center-v mt05">
+              <button class="btn bg-bright-teal-blue font-white">Default Button</button>
+              <button class="btn red font-white">Red Button</button>
+              <button class="btn green font-white">Green Button</button>
+              
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <h3 class="mt1">Form Inputs (<code>.form</code> & <code>.input</code>)</h3>
+            <form class="form max-width400px mt05">
+              <label>Name</label>
+              <input type="text" placeholder="Enter your name..." />
+              <label>Message</label>
+              <textarea placeholder="Write a message..."></textarea>
+            </form>
+
+            <h3 class="mt1">Checkboxes (<code>.checkbox</code>)</h3>
+            <div class="mt05">
+              <label class="checkbox">
+                <input type="checkbox" checked />
+                <span class="checkmark"></span>
+                <span>Active Option</span>
+              </label>
+            </div>
+
+            <h3 class="mt1">Circles (<code>.circle-small</code> & <code>.circle</code>)</h3>
+            <div class="flex center-v mt05">
+              <div class="circle-small bg-amber-flame font-white">S</div>
+              <div class="circle bg-deep-space-blue font-white">M</div>
+            </div>
+
+            <h3 class="mt1">Gradients</h3>
+            <div class="row gap-1 mt05">
+              <div class="col-sm-4 p1 br05 gradient-yellow font-charcoal center">.gradient-yellow</div>
+              <div class="col-sm-4 p1 br05 gradient-azure font-charcoal center">.gradient-azure</div>
+              <div class="col-sm-4 p1 br05 gradient-blue font-white center">.gradient-blue</div>
+              <div class="col-sm-4 p1 br05 gradient-red font-white center mt05">.gradient-red</div>
+              <div class="col-sm-4 p1 br05 gradient-purple font-white center mt05">.gradient-purple</div>
+              <div class="col-sm-4 p1 br05 gradient-green font-white center mt05">.gradient-green</div>
+            </div>
+          </section>
+
+          <!-- Additional Elements & Utilities Section to append inside #elements -->
+
+          <h3 class="mt1">Modals & Overlays (<code>.modal-overlay</code> & <code>.modal</code>)</h3>
+          <div class="card bg-isabelline mt05">
+            <p>Use <code>.modal-overlay</code> with <code>.modal</code> for full-screen dialogs.</p>
+            <button class="btn bg-deep-space-blue font-white mt05" onclick="document.getElementById('demo-modal').classList.remove('hide')">
+              Preview Modal
+            </button>
+          </div>
+
+          <!-- Modal Markup -->
+          <div id="demo-modal" class="modal-overlay hide">
+            <div class="modal bg-white br05 p2 shadow max-width500px">
+              <h3>Example Modal</h3>
+              <p class="mt05">This uses <code>.modal-overlay</code> with semi-transparent background styling.</p>
+              <button class="btn bg-flag-red font-white mt1" onclick="document.getElementById('demo-modal').classList.add('hide')">
+                Close Modal
+              </button>
+            </div>
+          </div>
+
+          <h3 class="mt1">Dropdowns (<code>.dropdown</code>)</h3>
+          <div class="flex mt05">
+            <div class="dropdown">
+              <button class="btn bg-charcoal font-white">Hover Dropdown ▼</button>
+              <div class="dropdown-content bg-white border p1 shadow-subtle br025 mt025">
+                <p class="p025"><a href="#" class="font-black">Option 1</a></p>
+                <p class="p025"><a href="#" class="font-black">Option 2</a></p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="mt1">Tables (<code>.table</code> & <code>.table-padded</code>)</h3>
+          <table class="table table-padded width100 text-left mt05">
+            <thead>
+              <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Status</th>
+              </tr>
             </thead>
-            <tr>
-              <td>Extra Small</td>
-              <td>none</td>
-              <td>&#60;396px</td>
-            </tr>
-            <tr>
-              <td>Small</td>
-              <td>col-sm-</td>
-              <td>&ge;396px</td>
-            </tr>
-            <tr>
-              <td>Medium</td>
-              <td>col-md-</td>
-              <td>&ge;600px</td>
-            </tr>
-            <tr>
-              <td>Large</td>
-              <td>col-lg-</td>
-              <td>&ge;900px</td>
-            </tr>
-            <tr>
-              <td>Extra Large</td>
-              <td>col-xl-</td>
-              <td>&ge;1200px</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>Item A</td>
+                <td>Description</td>
+                <td><span class="circle-small bg-jade-green font-white">✓</span></td>
+              </tr>
+              <tr>
+                <td>Item B</td>
+                <td>Description</td>
+                <td><span class="circle-small bg-strawberry-red font-white">✕</span></td>
+              </tr>
+            </tbody>
           </table>
-          <br/>
-          <h1>Colours</h1>
-          <p>Every colour has a Font (.font-*colour-name*), Background (.bg-*colour-name*) and Border (.border-*colour-name*) class</p>
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="flex m025"><div class="bg-white border p1 square height1rem"></div><p>white</p></div>
-              <div class="flex m025"><div class="bg-black border p1 square height1rem"></div><p>black</p></div>
-              <div class="flex m025"><div class="bg-cordovan border p1 square height1rem"></div><p>cordovan</p></div>
-              <div class="flex m025"><div class="bg-jasmine border p1 square height1rem"></div><p>jasmine</p></div>
-              <div class="flex m025"><div class="bg-black-bean border p1 square height1rem"></div><p>black-bean</p></div>
-              <div class="flex m025"><div class="bg-moss-green border p1 square height1rem"></div><p>moss-green</p></div>
-              <div class="flex m025"><div class="bg-resenda-green border p1 square height1rem"></div><p>resenda-green</p></div>
-              <div class="flex m025"><div class="bg-seashell border p1 square height1rem"></div><p>seashell</p></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="flex m025"><div class="bg-isabelline border p1 square height1rem"></div><p>isabelline</p></div>
-              <div class="flex m025"><div class="bg-sage border p1 square height1rem"></div><p>sage</p></div>
-              <div class="flex m025"><div class="bg-jasmine-transparent border p1 square height1rem"></div><p>jasmine-transparent</p></div>
-              <div class="flex m025"><div class="bg-seal-brown border p1 square height1rem"></div><p>seal-brown</p></div>
-              <div class="flex m025"><div class="bg-turquoise border p1 square height1rem"></div><p>turquoise</p></div>
-              <div class="flex m025"><div class="bg-turquoise-transparent border p1 square height1rem"></div><p>turquoise-transparent</p></div>
-              <div class="flex m025"><div class="bg-pale-azure border p1 square height1rem"></div><p>pale-azure</p></div>
-              <div class="flex m025"><div class="bg-sky-blue border p1 square height1rem"></div><p>sky-blue</p></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="flex m025"><div class="bg-blue-green border p1 square height1rem"></div><p>blue-green</p></div>
-              <div class="flex m025"><div class="bg-deep-space-blue border p1 square height1rem"></div><p>deep-space-blue</p></div>
-              <div class="flex m025"><div class="bg-amber-flame border p1 square height1rem"></div><p>amber-flame</p></div>
-              <div class="flex m025"><div class="bg-tiger-orange border p1 square height1rem"></div><p>tiger-orange</p></div>
-              <div class="flex m025"><div class="bg-fern border p1 square height1rem"></div><p>fern</p></div>
-              <div class="flex m025"><div class="bg-black-forest border p1 square height1rem"></div><p>black-forest</p></div>
-              <div class="flex m025"><div class="bg-medium-jungle border p1 square height1rem"></div><p>medium-jungle</p></div>
-              <div class="flex m025"><div class="bg-jade-green border p1 square height1rem"></div><p>jade-green</p></div>
-            </div>
+
+          <h3 class="mt1">Flex, Alignment & Justification</h3>
+          <div class="justify-between bg-isabelline p1 br025 mt05">
+            <span><code>.justify-between</code> Left</span>
+            <span>Right</span>
           </div>
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="flex m025"><div class="bg-vivid-tangerine border p1 square height1rem"></div><p>vivid-tangerine</p></div>
-              <div class="flex m025"><div class="bg-dark-orange border p1 square height1rem"></div><p>dark-orange</p></div>
-              <div class="flex m025"><div class="bg-flag-red border p1 square height1rem"></div><p>flag-red</p></div>
-              <div class="flex m025"><div class="bg-strawberry-red border p1 square height1rem"></div><p>strawberry-red</p></div>
-              <div class="flex m025"><div class="bg-bright-teal-blue border p1 square height1rem"></div><p>bright-teal-blue</p></div>
-              <div class="flex m025"><div class="bg-steel-blue border p1 square height1rem"></div><p>steel-blue</p></div>
-              <div class="flex m025"><div class="bg-grey border p1 square height1rem"></div><p>grey</p></div>
-              <div class="flex m025"><div class="bg-silver border p1 square height1rem"></div><p>silver</p></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="flex m025"><div class="bg-graphite border p1 square height1rem"></div><p>graphite</p></div>
-              <div class="flex m025"><div class="bg-charcoal border p1 square height1rem"></div><p>charcoal</p></div>
-              <div class="flex m025"><div class="bg-charcoal-transparent border p1 square height1rem"></div><p>charcoal-transparent</p></div>
-              <div class="flex m025"><div class="bg-ultra-violet border p1 square height1rem"></div><p>ultra-violet</p></div>
-              <div class="flex m025"><div class="bg-indigo border p1 square height1rem"></div><p>indigo</p></div>
-              <div class="flex m025"><div class="bg-deep-lilac border p1 square height1rem"></div><p>deep-lilac</p></div>
-              <div class="flex m025"><div class="bg-amethyst-smoke border p1 square height1rem"></div><p>amethyst-smoke</p></div>
-              <div class="flex m025"><div class="bg-indigo-ink border p1 square height1rem"></div><p>indigo-ink</p></div>
-            </div>
-            <div class="col-sm-4">
-              <div class="flex m025"><div class="bg-mk-white border p1 square height1rem"></div><p>mk-white</p></div>
-              <div class="flex m025"><div class="bg-mk-green border p1 square height1rem"></div><p>mk-green</p></div>
-              <div class="flex m025"><div class="bg-mk-pink border p1 square height1rem"></div><p>mk-pink</p></div>
-              <div class="flex m025"><div class="bg-mk-yellow border p1 square height1rem"></div><p>mk-yellow</p></div>
-              <div class="flex m025"><div class="bg-mk-blue border p1 square height1rem"></div><p>mk-blue</p></div>
-              <div class="flex m025"><div class="bg-mk-purple border p1 square height1rem"></div><p>mk-purple</p></div>
-              <div class="flex m025"><div class="bg-mk-grey border p1 square height1rem"></div><p>mk-grey</p></div>
-            </div>
+          <div class="flex center-v mt05">
+            <div class="bg-amber-flame p1 font-white br025">Flex Item 1</div>
+            <div class="bg-tiger-orange p1 font-white br025">Flex Item 2</div>
           </div>
-          <br />
-          <h1>Elements</h1>
-          <h3>.card</h3>
-          <div class="card">A simple .card class. Mostly used when prototyping until I figure our the colour scheme.</div>
-          <br />
-          <h1></h1>
-          <br />
-          <h1></h1>
-          <br />
-          <h1></h1>
-          <br />
-          <h1></h1>
-          <br />
-          <h1></h1>
-          <br />
-          <h1></h1>
+
+          <h3 class="mt1">Border Radius Scale</h3>
+          <div class="flex mt05">
+            <div class="p1 bg-sage font-white br025">.br025</div>
+            <div class="p1 bg-sage font-white br05">.br05</div>
+            <div class="p1 bg-sage font-white br1">.br1</div>
+            <div class="p1 bg-sage font-white br2">.br2</div>
+          </div>
+
+          <h3 class="mt1">Box Shadows</h3>
+          <div class="row gap-1 mt05">
+            <div class="col-sm-4 p1 bg-white br05 shadow center">.shadow</div>
+            <div class="col-sm-4 p1 bg-white br05 shadow-brown center">.shadow-brown</div>
+            <div class="col-sm-4 p1 bg-white br05 shadow-subtle center">.shadow-subtle</div>
+          </div>
+
+          <h3 class="mt1">Typography & Link Utilities</h3>
+          <div class="mt05">
+            <p class="bold">.bold class text</p>
+            <p class="italic">.italic class text</p>
+            <p class="link-style-none"><a href="#">.link-style-none (Unstyled Link)</a></p>
+          </div>
+
         </div>
         <div class="col-md-2"></div>
       </div>
     </div>
-</body>
-<script>
-  async function copyCode() {
-    // Get the text from the code element
-    const code = document.getElementById("codeSnippet").innerText;
-    const button = document.getElementById("copyBtn");
 
-    try {
-      // Write text to clipboard
-      await navigator.clipboard.writeText(code);
-      
-      // Provide visual feedback
-      button.innerText = "Copied!";
-      setTimeout(() => button.innerText = "Copy Code", 2000);
-    } catch (err) {
-      console.error("Failed to copy!", err);
-    }
-  }
-</script>
+    <!-- Script for copying code -->
+    <script>
+      async function copyCode() {
+        const code = document.getElementById("codeSnippet").innerText;
+        const button = document.getElementById("copyBtn");
+
+        try {
+          await navigator.clipboard.writeText(code);
+          button.innerText = "Copied!";
+          setTimeout(() => button.innerText = "Copy Code", 2000);
+        } catch (err) {
+          console.error("Failed to copy!", err);
+        }
+      }
+    </script>
+  </body>
 </html>
